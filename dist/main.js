@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelector("#content");console.log(e);const t=document.createElement("nav"),n=document.createElement("li"),o=document.createElement("li"),c=document.createElement("li");n.textContent="MENU",c.textContent="ABOUT",o.textContent="CONTACT",e.appendChild(t),t.appendChild(n),t.appendChild(c),t.appendChild(o)})();
