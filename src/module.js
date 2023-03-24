@@ -1,9 +1,11 @@
 const root = document.querySelector('#content');
 
 const rootContent = document.createElement('div');
-root.appendChild(rootContent);
+//sibling Node of root - rootContent
+document.body.appendChild(rootContent);
 
 export { root, rootContent };
+
 function Home() {
   const content = () => {
     const nav = document.createElement('nav');
@@ -21,14 +23,18 @@ function Home() {
     // first child of root
     root.appendChild(nav);
 
+    // add eventlisteners for each menuTab
     menu.addEventListener('click', () => {
-      console.log(root);
-      //only remove if there're more than one child element of root
-      if (root.childElementCount > 1) root.lastChild.remove();
-      tab.Menu();
+      while (rootContent.firstChild) {
+        rootContent.removeChild(rootContent.lastChild);
+      }
+      menuTab.Menu();
     });
+
     about.addEventListener('click', () => {
-      if (root.childElementCount > 1) root.lastChild.remove();
+      while (rootContent.firstChild) {
+        rootContent.removeChild(rootContent.lastChild);
+      }
       aboutTab.section1();
     });
   };
@@ -36,12 +42,7 @@ function Home() {
 }
 export { Home };
 
-function RemoveRootContent() {
-  rootContent.remove();
-}
-
-export { RemoveRootContent };
-function Menu() {
+function MenuTab() {
   //function to delete previous things on webpage
 
   const Menu = () => {
@@ -60,13 +61,13 @@ function Menu() {
     salads.textContent = 'Salads';
 
     rootContent.append(menu, mainCourse, desserts, drinks, salads);
-    root.appendChild(rootContent);
+    // root.appendChild(rootContent);
   };
 
   return { Menu };
 }
-const tab = Menu();
-export { Menu };
+const menuTab = MenuTab();
+export { MenuTab };
 
 function About() {
   const section1 = () => {
@@ -80,7 +81,7 @@ function About() {
     para.textContent =
       'A place where true Neapolitan tradition combines with the vision of the new generation. Our pizza is a mix of passion and bakery science. Inspired by the scientific elements, we created our own. You can spot several of these icons at L’Arte. Watch closely and they tell you the story about the origins of Napels and the mythical siren Partenope. Following the path of the song Odissea from La Famiglia, telling old stories by using a new language – rap music. Just like L’Arte does with the pizza.';
     rootContent.append(header, header2, para);
-    root.append(rootContent);
+    // root.append(rootContent);
   };
   return { section1 };
 }

@@ -3,7 +3,7 @@ import {
   rootContent,
   RemoveRootContent,
   Home,
-  Menu,
+  MenuTab,
   About,
 } from './module.js';
 
