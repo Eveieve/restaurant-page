@@ -15,14 +15,16 @@ function Home() {
     nav.appendChild(about);
     nav.appendChild(contact);
 
-    menu.addEventListener('click', () => tab.menuTab());
+    menu.addEventListener('click', () => tab.Menu(), { once: true });
   };
   return { content };
 }
 export { Home };
 
-function MenuTab() {
-  const menuTab = () => {
+function Menu() {
+  //function to delete previous things on webpage
+
+  const Menu = () => {
     const menu = document.createElement('h2');
     menu.textContent = 'MENU';
 
@@ -40,7 +42,8 @@ function MenuTab() {
     document.body.append(menu, mainCourse, desserts, drinks, salads);
     document.body.appendChild(mainCourse);
   };
-  return { menuTab };
+
+  return { Menu };
 }
-const tab = MenuTab();
-export { MenuTab };
+const tab = Menu();
+export { Menu };
