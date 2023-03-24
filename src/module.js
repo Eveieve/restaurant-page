@@ -1,7 +1,8 @@
+const root = document.querySelector('#content');
+console.log(root);
+
 function Home() {
   const content = () => {
-    const root = document.querySelector('#content');
-    console.log(root);
     const nav = document.createElement('nav');
     const menu = document.createElement('li');
     const contact = document.createElement('li');
@@ -41,7 +42,7 @@ function Menu() {
     const salads = document.createElement('h4');
     salads.textContent = 'Salads';
 
-    document.body.append(menu, mainCourse, desserts, drinks, salads);
+    root.append(menu, mainCourse, desserts, drinks, salads);
   };
 
   return { Menu };
@@ -60,7 +61,7 @@ function About() {
     const para = document.createElement('p');
     para.textContent =
       'A place where true Neapolitan tradition combines with the vision of the new generation. Our pizza is a mix of passion and bakery science. Inspired by the scientific elements, we created our own. You can spot several of these icons at L’Arte. Watch closely and they tell you the story about the origins of Napels and the mythical siren Partenope. Following the path of the song Odissea from La Famiglia, telling old stories by using a new language – rap music. Just like L’Arte does with the pizza.';
-    document.body.append(header, header2, para);
+    root.append(header, header2, para);
   };
   return { section1 };
 }
