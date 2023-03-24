@@ -1,7 +1,12 @@
-import { Home, Menu, About } from './module.js';
+import {
+  root,
+  rootContent,
+  RemoveRootContent,
+  Home,
+  Menu,
+  About,
+} from './module.js';
 
 const home = Home();
+//display Home Content
 home.content();
-
-// const about = About();
-// about.section1();
