@@ -1,23 +1,28 @@
-function MenuTab() {
-  //function to delete previous things on webpage
-  const Menu = () => {
-    const menu = document.createElement('h2');
-    menu.textContent = 'MENU';
+//function to delete previous things on webpage
+const root = document.querySelector('#content');
 
-    const mainCourse = document.createElement('h4');
-    mainCourse.textContent = 'Main Course';
+const rootContent = document.createElement('div');
+document.body.appendChild(rootContent);
 
-    const desserts = document.createElement('h4');
+const renderMenu = () => {
+  const menu = document.createElement('h2');
+  menu.textContent = 'MENU';
 
-    desserts.textContent = 'Desserts';
-    const drinks = document.createElement('h4');
-    drinks.textContent = 'Drinks';
-    const salads = document.createElement('h4');
-    salads.textContent = 'Salads';
+  const mainCourse = document.createElement('h4');
+  mainCourse.textContent = 'Main Course';
 
-    rootContent.append(menu, mainCourse, desserts, drinks, salads);
-    // root.appendChild(rootContent);
-  };
+  const desserts = document.createElement('h4');
+
+  desserts.textContent = 'Desserts';
+  const drinks = document.createElement('h4');
+  drinks.textContent = 'Drinks';
+  const salads = document.createElement('h4');
+  salads.textContent = 'Salads';
+
+  rootContent.append(menu, mainCourse, desserts, drinks, salads);
+  // root.appendChild(rootContent);
+};
+
+export default function renderMenuTab() {
+  renderMenu();
 }
-
-export { MenuTab };

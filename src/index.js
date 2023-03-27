@@ -1,5 +1,5 @@
-import { Home } from './home.js';
+import renderHome from './home.js';
 
-const home = Home();
-//display Home Content
-home.content();
+console.log(renderHome);
+
+renderHome();

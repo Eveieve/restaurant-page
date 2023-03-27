@@ -1,6 +1,6 @@
 # restaurant-page
 
-## About this project
+## About
 
 ## Objective
 

@@ -1,39 +1,41 @@
-function Home() {
-  const root = document.querySelector('#content');
-  const rootContent = document.createElement('div');
-  document.body.appendChild(rootContent);
+import renderMenuTab from './menu';
+import renderAbout from './about';
+// function Home() {
+const root = document.querySelector('#content');
 
-  const content = () => {
-    const nav = document.createElement('nav');
-    const menu = document.createElement('li');
-    const contact = document.createElement('li');
-    const about = document.createElement('li');
+const rootContent = document.createElement('div');
+document.body.appendChild(rootContent);
 
-    menu.textContent = 'MENU';
-    about.textContent = 'ABOUT';
-    contact.textContent = 'CONTACT';
+const renderNavbar = () => {
+  const nav = document.createElement('nav');
+  const menu = document.createElement('li');
+  const contact = document.createElement('li');
+  const about = document.createElement('li');
 
-    nav.appendChild(menu);
-    nav.appendChild(about);
-    nav.appendChild(contact);
-    // first child of root
-    root.appendChild(nav);
+  menu.textContent = 'MENU';
+  about.textContent = 'ABOUT';
+  contact.textContent = 'CONTACT';
 
-    // add eventlisteners for each menuTab
-    menu.addEventListener('click', () => {
-      while (rootContent.firstChild) {
-        rootContent.removeChild(rootContent.lastChild);
-      }
-      menuTab.Menu();
-    });
+  nav.appendChild(menu);
+  nav.appendChild(about);
+  nav.appendChild(contact);
+  root.appendChild(nav);
 
-    about.addEventListener('click', () => {
-      //wipe out contents of rootContent
-      while (rootContent.firstChild) {
-        rootContent.removeChild(rootContent.lastChild);
-      }
-      aboutTab.section1();
-    });
-  };
+  menu.addEventListener('click', () => {
+    while (rootContent.firstChild) {
+      rootContent.removeChild(rootContent.lastChild);
+    }
+    renderMenuTab();
+  });
+
+  about.addEventListener('click', () => {
+    while (rootContent.firstChild) {
+      rootContent.removeChild(rootContent.lastChild);
+    }
+    renderAbout();
+  });
+};
+
+export default function renderHome() {
+  renderNavbar();
 }
-export { Home, root, rootContent };
