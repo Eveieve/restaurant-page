@@ -1,11 +1,4 @@
-import {
-  root,
-  rootContent,
-  RemoveRootContent,
-  Home,
-  MenuTab,
-  About,
-} from './module.js';
+import { Home } from './home.js';
 
 const home = Home();
 //display Home Content
