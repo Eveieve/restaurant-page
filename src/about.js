@@ -1,6 +1,4 @@
-const root = document.querySelector('#content');
-const rootContent = document.createElement('div');
-document.body.appendChild(rootContent);
+const rootContent = document.querySelector('#root-content');
 
 const renderSection1 = () => {
   const header = document.createElement('h1');

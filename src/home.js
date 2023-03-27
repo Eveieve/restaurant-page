@@ -1,10 +1,9 @@
 import renderMenuTab from './menu';
 import renderAbout from './about';
-// function Home() {
+
 const root = document.querySelector('#content');
 
-const rootContent = document.createElement('div');
-document.body.appendChild(rootContent);
+const rootContent = document.querySelector('#root-content');
 
 const renderHomeContent = () => {
   const p = document.createElement('p');
@@ -27,9 +26,6 @@ const renderNavbar = () => {
   nav.appendChild(contact);
   root.appendChild(nav);
 
-  console.log(root);
-  console.log(rootContent);
-
   menu.addEventListener('click', () => {
     while (rootContent.firstChild) {
       rootContent.removeChild(rootContent.lastChild);
@@ -41,11 +37,11 @@ const renderNavbar = () => {
     while (rootContent.firstChild) {
       rootContent.removeChild(rootContent.lastChild);
     }
-    // renderAbout();
+    renderAbout();
   });
 };
 
 export default function renderHome() {
-  renderNavbar();
   renderHomeContent();
+  renderNavbar();
 }

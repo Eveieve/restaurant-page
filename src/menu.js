@@ -1,8 +1,6 @@
-//function to delete previous things on webpage
-const root = document.querySelector('#content');
-
-const rootContent = document.createElement('div');
-document.body.appendChild(rootContent);
+// const root = document.querySelector('#content');
+const rootContent = document.querySelector('#root-content');
+// document.body.appendChild(rootContent);
 
 const renderMenu = () => {
   const menu = document.createElement('h2');
@@ -20,7 +18,6 @@ const renderMenu = () => {
   salads.textContent = 'Salads';
 
   rootContent.append(menu, mainCourse, desserts, drinks, salads);
-  // root.appendChild(rootContent);
 };
 
 export default function renderMenuTab() {
