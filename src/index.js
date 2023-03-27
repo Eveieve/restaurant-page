@@ -1,5 +1,7 @@
-import renderHome from './home.js';
+import { renderHome, renderNavbar } from './home.js';
 
 console.log(renderHome);
 
-renderHome();
+const homepage = renderHome();
+
+// add eventlistner to home button
